@@ -20,8 +20,6 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
-    // Route::apiResource('fornecedores', FornecedorController::class);
+    Route::apiResource('fornecedores', FornecedorController::class);
     Route::apiResource('funcionarios', FuncionarioController::class);
-    Route::get('/fornecedores/{id}', [FornecedorController::class, 'show']);
-    Route::get('/fornecedores', [FornecedorController::class, 'index']);
 });

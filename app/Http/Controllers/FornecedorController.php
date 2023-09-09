@@ -49,8 +49,9 @@ class FornecedorController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Fornecedor $fornecedor)
+    public function update(Request $request, string $id)
     {
+        $fornecedor = Fornecedor::find($id);
         $validator = Validator::make($request->only($fornecedor->getFillable()), [
             'nome' => 'string',
             'email' => 'email|unique:fornecedores,email,' . $fornecedor->id,
