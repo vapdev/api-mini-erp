@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FuncionarioController;
 use App\Http\Controllers\FornecedorController;
+use App\Http\Controllers\ClienteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
     });
     Route::apiResource('fornecedores', FornecedorController::class);
     Route::apiResource('funcionarios', FuncionarioController::class);
+    Route::apiResource('clientes', ClienteController::class);
 });

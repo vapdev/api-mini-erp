@@ -13,9 +13,11 @@ class CreateFornecedoresTable extends Migration
             $table->string('email')->unique();
             $table->string('cnpj')->unique()->nullable();
             $table->string('telefone')->nullable();
-            $table->string('endereco')->nullable();
-            $table->unsignedBigInteger('cidade_id')->nullable();
-            $table->unsignedBigInteger('estado_id')->nullable();
+            $table->string('rua')->nullable();
+            $table->string('numero')->nullable();
+            $table->string('bairro')->nullable();
+            $table->string('cidade')->nullable();
+            $table->string('estado', 2)->nullable();
             $table->string('cep')->nullable();
             $table->timestamps();
         });
