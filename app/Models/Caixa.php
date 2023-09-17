@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Caixa extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'nome',
+        'descricao',
+        'status',
+    ];
 }

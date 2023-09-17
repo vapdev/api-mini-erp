@@ -5,17 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cidade extends Model
+class CaixaFluxo extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'nome',
-        'estado_id',
-    ];
+    protected $table = 'caixa_fluxos';
 
-    public function funcionarios()
-    {
-        return $this->hasMany(Funcionario::class);
-    }
+    protected $fillable = [
+        'caixa_id',
+        'saldo_inicial',
+        'saldo_final',
+    ];
 }

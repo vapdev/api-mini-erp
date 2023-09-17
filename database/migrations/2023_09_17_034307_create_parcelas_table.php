@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('origem');
             $table->date('data_vencimento');
             $table->date('data_pagamento')->nullable();
+            $table->string('ordem');
             $table->decimal('valor', 10, 2);
             $table->timestamps();
         });
