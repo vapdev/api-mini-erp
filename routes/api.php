@@ -5,6 +5,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FuncionarioController;
 use App\Http\Controllers\FornecedorController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\CaixaController;
+use App\Http\Controllers\CaixaRegistroController;
+use App\Http\Controllers\FormaPagamentoController;
+
 
 /*
 |--------------------------------------------------------------------------
