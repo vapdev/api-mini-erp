@@ -24,4 +24,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::apiResource('fornecedores', FornecedorController::class);
     Route::apiResource('funcionarios', FuncionarioController::class);
     Route::apiResource('clientes', ClienteController::class);
+    Route::apiResource('produtos', ProdutoController::class);
+    Route::apiResource('categorias', CategoriaController::class);
+    Route::apiResource('caixas', CaixaController::class);
+    Route::apiResource('caixa-registros', CaixaRegistroController::class);
+    Route::apiResource('formas-pagamento', FormaPagamentoController::class);
 });

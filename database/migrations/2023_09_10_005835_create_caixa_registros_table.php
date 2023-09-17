@@ -18,6 +18,8 @@ return new class extends Migration
             $table->decimal('valor', 10, 2);
             $table->unsignedBigInteger('caixa_id');
             $table->unsignedBigInteger('user_id');
+            $table->boolean('a_prazo')->default(false);
+            $table->unsignedBigInteger('forma_pagamento_id')->nullable();
             $table->timestamps();
 
             $table->foreign('caixa_id')->references('id')->on('caixas')->onDelete('cascade');

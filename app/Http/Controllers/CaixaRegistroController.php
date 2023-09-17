@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\CaixaRegistro;
@@ -13,15 +12,8 @@ class CaixaRegistroController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        $caixaRegistros = CaixaRegistro::all();
+        return response()->json(['data' => $caixaRegistros], 200);
     }
 
     /**
@@ -29,7 +21,8 @@ class CaixaRegistroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $caixaRegistro = CaixaRegistro::create($request->all());
+        return response()->json(['data' => $caixaRegistro], 201);
     }
 
     /**
@@ -37,15 +30,7 @@ class CaixaRegistroController extends Controller
      */
     public function show(CaixaRegistro $caixaRegistro)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(CaixaRegistro $caixaRegistro)
-    {
-        //
+        return response()->json(['data' => $caixaRegistro], 200);
     }
 
     /**
@@ -53,7 +38,8 @@ class CaixaRegistroController extends Controller
      */
     public function update(Request $request, CaixaRegistro $caixaRegistro)
     {
-        //
+        $caixaRegistro->update($request->all());
+        return response()->json(['data' => $caixaRegistro], 200);
     }
 
     /**
@@ -61,6 +47,7 @@ class CaixaRegistroController extends Controller
      */
     public function destroy(CaixaRegistro $caixaRegistro)
     {
-        //
+        $caixaRegistro->delete();
+        return response()->json(null, 204);
     }
 }

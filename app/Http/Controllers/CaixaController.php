@@ -13,15 +13,8 @@ class CaixaController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        $caixas = Caixa::all();
+        return response()->json(['data' => $caixas], 200);
     }
 
     /**
@@ -29,7 +22,8 @@ class CaixaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $caixa = Caixa::create($request->all());
+        return response()->json(['data' => $caixa], 201);
     }
 
     /**
@@ -37,15 +31,7 @@ class CaixaController extends Controller
      */
     public function show(Caixa $caixa)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Caixa $caixa)
-    {
-        //
+        return response()->json(['data' => $caixa], 200);
     }
 
     /**
@@ -53,7 +39,8 @@ class CaixaController extends Controller
      */
     public function update(Request $request, Caixa $caixa)
     {
-        //
+        $caixa->update($request->all());
+        return response()->json(['data' => $caixa], 200);
     }
 
     /**
@@ -61,6 +48,7 @@ class CaixaController extends Controller
      */
     public function destroy(Caixa $caixa)
     {
-        //
+        $caixa->delete();
+        return response()->json(null, 204);
     }
 }
